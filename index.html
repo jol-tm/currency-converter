@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    <div class="bigBox">
+        <h1>Conversor de Moedas</h1>
+        <div class="box">
+            <select id="baseCur"></select>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m700-300-57-56 84-84H120v-80h607l-83-84 57-56 179 180-180 180Z"/></svg>
+            <select id="convCur"></select>
+        </div>
+        <input type="number" id="baseValue" placeholder="Valor">
+        <button id="convBtn">Converter</button>
+        <div id="convValue"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
