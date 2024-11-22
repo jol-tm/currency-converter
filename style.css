@@ -3,6 +3,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 input, select, button {
@@ -41,12 +43,16 @@ input[type=number] {
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+    padding: .5rem;
+    box-shadow: 0 0 1rem lightgreen;
+    border-radius: 1rem;
+    width: auto;
 }
 .box {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: .2rem;
 }
 
 #convValue {

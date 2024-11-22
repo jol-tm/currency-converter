@@ -187,8 +187,16 @@ function createOpts() {
     ];
 
     curs.forEach(el => {
-        baseCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
-        convCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
+        if (el[0] == "USD") {
+            baseCur.innerHTML += `<option value="${el[0]}" selected>${el[1]}</option>`;
+            convCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
+        } else if (el[0] == "BRL") {
+            baseCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
+            convCur.innerHTML += `<option value="${el[0]}" selected>${el[1]}</option>`;
+        } else {
+            baseCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
+            convCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
+        }
     });
 }
 
