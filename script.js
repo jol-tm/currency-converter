@@ -1,8 +1,8 @@
-let baseValue = document.getElementById("baseValue");
-let baseCur = document.getElementById("baseCur");
-let convValue = document.getElementById("convValue");
-let convCur = document.getElementById("convCur");
-let convBtn = document.getElementById("convBtn");
+const baseValue = document.getElementById("baseValue");
+const baseCur = document.getElementById("baseCur");
+const convValue = document.getElementById("convValue");
+const convCur = document.getElementById("convCur");
+const convBtn = document.getElementById("convBtn");
 
 convBtn.addEventListener("click", getRates);
 
@@ -10,6 +10,7 @@ async function getRates() {
     fetch(`https://v6.exchangerate-api.com/v6/43de09656ae6450044e9d7dd/latest/${baseCur.value}`)
     .then(Response => Response.json())
     .then(calc)
+    .catch(error);
 }
 
 function calc(result) {
@@ -187,17 +188,13 @@ function createOpts() {
     ];
 
     curs.forEach(el => {
-        if (el[0] == "USD") {
-            baseCur.innerHTML += `<option value="${el[0]}" selected>${el[1]}</option>`;
-            convCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
-        } else if (el[0] == "BRL") {
-            baseCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
-            convCur.innerHTML += `<option value="${el[0]}" selected>${el[1]}</option>`;
-        } else {
-            baseCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
-            convCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
-        }
+        baseCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
+        convCur.innerHTML += `<option value="${el[0]}">${el[1]}</option>`;
     });
+}
+
+function error() {
+    convValue.innerHTML = "<div id='anim'>Erro ao converter :c</div>";
 }
 
 createOpts();
